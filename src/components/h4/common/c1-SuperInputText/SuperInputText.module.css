@@ -1,0 +1,35 @@
+.superInput {
+    width: 250px;
+    height: 30px;
+    outline: none;
+    margin: 7px;
+    border: none;
+    border-bottom: #2d2d2d 4px solid;
+    font-size: 20px;
+}
+
+.superInput:focus {
+    height: 30px;
+    box-shadow: #898787 1px 1px 5px;
+
+}
+
+.superInputError {
+    width: 250px;
+    height: 30px;
+    outline: none;
+    margin: 7px;
+    border: none;
+    border-bottom: #f80808 4px solid;
+    font-size: 20px;
+    color: red;
+}
+
+/*.errorInput {
+    border: 3px solid lime;
+    background: red;
+}*/
+
+.error {
+    color: red;
+}
