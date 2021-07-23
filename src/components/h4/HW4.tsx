@@ -34,9 +34,12 @@ function HW4() {
                 <SuperInputText
                     className={s.blue} // проверьте, рабоет ли смешивание классов
                     placeholder={'enter your password'}
+
                 />
 
+
                 {/*----------------------------------------------------*/}
+
 
                 <SuperButton>
                     default
