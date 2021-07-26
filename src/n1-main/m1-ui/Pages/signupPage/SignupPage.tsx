@@ -10,6 +10,9 @@ type FormikErrorType = {
     cfPassword?: string
 }
 
+
+
+
 const SignupPage: React.FC = () => {
 
 
@@ -106,7 +109,11 @@ const SignupPage: React.FC = () => {
                                 </div>
                             </FormControl>
                         </form>
+
                     </Grid>
+                    <p>
+                        Already have an account? <a href="/login">Log in here</a>
+                    </p>
                 </Grid>
 
             </div>
