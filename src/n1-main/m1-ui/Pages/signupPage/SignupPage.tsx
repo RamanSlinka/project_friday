@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppStoreType} from "../../../m2-bll/redux/store";
 import {Redirect} from "react-router-dom";
 import {PATH} from "../../Routes";
+import {registrationThunk} from "./signupReducer";
 
 
 type FormikErrorType = {
@@ -19,7 +20,7 @@ type FormikErrorType = {
 
 const SignupPage: React.FC = () => {
 
-const error = useSelector<AppStoreType>(state => state.signup.error);
+// const error = useSelector<AppStoreType>(state => state.signup.error);
 const isFetching = useSelector<AppStoreType>(state => state.signup.isFetching);
 
 const dispatch = useDispatch();
@@ -30,7 +31,8 @@ const dispatch = useDispatch();
         initialValues: {
             email: '',
             password: '',
-            cfPassword: ''
+            cfPassword: '',
+            error: ''
         },
         validate: (values) => {
             const errors: FormikErrorType = {};
@@ -41,8 +43,8 @@ const dispatch = useDispatch();
             }
             if (!values.password) {
                 errors.password = 'Required';
-            } else if (values.password.length < 4) {
-                errors.password = 'Password must be 4 characters or more'
+            } else if (values.password.length < 7) {
+                errors.password = 'Password must be 7 characters or more'
             }
 
 
@@ -52,7 +54,8 @@ const dispatch = useDispatch();
             //alert(JSON.stringify(values));
             if(values.email !== '' && values.password !== '' && values.cfPassword !== ''){
                 if (values.password === values.cfPassword) {
-                    //dispatch()
+                    dispatch(registrationThunk(values.email, values.password))
+                    formik.resetForm();
                 }
             }
         },
@@ -110,6 +113,7 @@ const dispatch = useDispatch();
 
                                 <div style={{display: 'flex', flexDirection: 'row', marginTop: '40px'}}>
                                     <Button
+
                                         style={{margin: '5px'}}
                                         type={'reset'}
                                         variant={'outlined'}
@@ -127,12 +131,14 @@ const dispatch = useDispatch();
 
                                 </div>
                             </FormControl>
+
+                            <p>
+                                Already have an account? <a href="/">Log in here</a>
+                            </p>
                         </form>
 
                     </Grid>
-                    <p>
-                        Already have an account? <a href="/">Log in here</a>
-                    </p>
+
                 </Grid>
 
             </div>
