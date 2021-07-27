@@ -22,6 +22,12 @@ export type UserLoginType = {
     publicCardPacksCount: number
 }
 
+type registrationUser = {
+    addedUser: {}
+    error?: string
+}
+
+
 export const acsessAPI = {
     loginUser(email:string, password:string, rememberMe:boolean) {
         try{
@@ -33,6 +39,10 @@ export const acsessAPI = {
                 e.response.data.error:
                 (e.message + ', more details in the console');
         }
+    },
+    registrationUser(email: string, password: string) {
+        const promise = instance.post<registrationUser>("/auth/register", {email, password})
+        return promise
     }
 
 }

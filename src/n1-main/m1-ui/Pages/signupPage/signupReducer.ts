@@ -1,3 +1,6 @@
+import {acsessAPI} from "../../../m3-dal/Api";
+import {useDispatch} from "react-redux";
+import {Dispatch} from "redux";
 
 
 const initialState = {
@@ -39,3 +42,23 @@ export type signupReducerActionsTypes = SignupActionType | SetIsFetchingSignupAc
 
 type SignupActionType = ReturnType<typeof signupAC>;
 type SetIsFetchingSignupActionType = ReturnType<typeof setIsFetchingSignupAC>;
+
+
+//Thunk
+
+
+
+export const registrationThunk = (email: string, password: string) => {
+
+    return (dispatch: Dispatch) => {
+        acsessAPI.registrationUser(email, password)
+            .then(() => {
+                dispatch(signupAC(email, password));
+                dispatch(setIsFetchingSignupAC(true))
+            })
+            .catch(error => {
+                const message = error.response.data.error
+                dispatch(signupAC(email, password, message))
+            })
+    }
+}

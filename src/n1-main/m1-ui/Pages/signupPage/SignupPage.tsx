@@ -2,6 +2,10 @@ import React from 'react'
 import {FormControl, FormGroup, FormLabel, TextField, Button, Grid} from '@material-ui/core'
 import s from './signupPage.module.css'
 import {useFormik} from "formik";
+import {useDispatch, useSelector} from "react-redux";
+import {AppStoreType} from "../../../m2-bll/redux/store";
+import {Redirect} from "react-router-dom";
+import {PATH} from "../../Routes";
 
 
 type FormikErrorType = {
@@ -14,6 +18,12 @@ type FormikErrorType = {
 
 
 const SignupPage: React.FC = () => {
+
+const error = useSelector<AppStoreType>(state => state.signup.error);
+const isFetching = useSelector<AppStoreType>(state => state.signup.isFetching);
+
+const dispatch = useDispatch();
+
 
 
     const formik = useFormik({
@@ -39,9 +49,18 @@ const SignupPage: React.FC = () => {
             return errors;
         },
         onSubmit: values => {
-            alert(JSON.stringify(values));
+            //alert(JSON.stringify(values));
+            if(values.email !== '' && values.password !== '' && values.cfPassword !== ''){
+                if (values.password === values.cfPassword) {
+                    //dispatch()
+                }
+            }
         },
-    })
+    });
+
+    if (isFetching) {
+        return  <Redirect to={PATH.LOGIN}/>
+    }
 
 
     return (
@@ -112,7 +131,7 @@ const SignupPage: React.FC = () => {
 
                     </Grid>
                     <p>
-                        Already have an account? <a href="/login">Log in here</a>
+                        Already have an account? <a href="/">Log in here</a>
                     </p>
                 </Grid>
 
