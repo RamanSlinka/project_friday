@@ -7,6 +7,8 @@ import NotFoundPage from "./Pages/NotFoundPage";
 import RestorePassPage from "./Pages/RestorePassPage";
 import NewPassPage from "./Pages/NewPassPage";
 import TestPage from "./Pages/TestPage";
+import RestorePassCheckEmailPage from "./Pages/RestorePassCheckEmailPage";
+import Loading from "./common/c7-Progress/Loading";
 
 
 
@@ -16,7 +18,8 @@ export const PATH = {
     PROFILE: '/profile',
     NOTFOUND: '/404',
     RESTORE_PASS: '/restore',
-    NEW_PASS: '/newpassword',
+    RESTORE_PASS_CHECK_EMAIL: '/check_email',
+    NEW_PASS: '/set-new-password',
     TEST_PAGE: '/test_page',
     ALL_ROUTES : '*',
 }
@@ -37,8 +40,10 @@ const  Routes : React.FC = ()  => {
                 <Route path={PATH.SIGNUP} exact render={() => <SignupPage/>}/>
                 <Route path={PATH.PROFILE} render={() => <ProfilePage/>}/>
                 <Route path={PATH.RESTORE_PASS} render={() => <RestorePassPage/>}/>
-                <Route path={PATH.NEW_PASS} render={() => <NewPassPage/>}/>
-                <Route path={PATH.TEST_PAGE} render={() => <TestPage/>}/>
+                <Route path={PATH.RESTORE_PASS_CHECK_EMAIL} render={() => <RestorePassCheckEmailPage/>}/>
+                <Route path={PATH.NEW_PASS + '/:token'} component={NewPassPage}/>
+                {/*<Route path={PATH.DESTINATION_LIST_PAGE + '/:id'} exact={true} component={DestinationProfileContainer} />*/}
+                <Route path={PATH.TEST_PAGE} render={() => <Loading message={"Wait a minute please"}/>}/>
                 <Route path={"/NotFoundPage"} render={() => <NotFoundPage/>}/>
                 <Redirect from={PATH.ALL_ROUTES} to={"NotFoundPage"}/>
                 {/*<Route render={() => <LoginPage/>}/>*/}

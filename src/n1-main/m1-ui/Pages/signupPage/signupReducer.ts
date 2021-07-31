@@ -1,6 +1,5 @@
-import {acsessAPI} from "../../../m3-dal/Api";
-import {useDispatch} from "react-redux";
 import {Dispatch} from "redux";
+import {acsessAPI} from "../../../m3-dal/Api";
 
 
 const initialState = {
@@ -10,7 +9,7 @@ const initialState = {
     isFetching: false
 };
 
-export const signupReducer = (state: initialStateType = initialState, action: signupReducerActionsTypes): initialStateType => {
+export const signupReducer = (state: initialStateType = initialState, action: signupReducerActionTypes): initialStateType => {
     switch (action.type) {
         case "SIGN_UP":
             return {
@@ -29,32 +28,30 @@ export const signupReducer = (state: initialStateType = initialState, action: si
     }
 }
 
-//Action creators
+
+// Action creators
+
 export const signupAC = (email: string, password: string, message?: string) =>
-    ({type:'SIGN_UP', email, password, message} as const);
+    ({type: 'SIGN_UP', email, password, message} as const);
 
 export const setIsFetchingSignupAC = (isFetching: boolean) =>
-    ({type: 'IS_FETCHING', isFetching} as const)
+    ({type: 'IS_FETCHING', isFetching }as const);
 
 type initialStateType = typeof initialState;
 
-export type signupReducerActionsTypes = SignupActionType | SetIsFetchingSignupActionType;
-
+export type signupReducerActionTypes = SignupActionType | SetIsFetchingSignupActionType;
 type SignupActionType = ReturnType<typeof signupAC>;
 type SetIsFetchingSignupActionType = ReturnType<typeof setIsFetchingSignupAC>;
 
-
-//Thunk
-
-
+// Thunk
 
 export const registrationThunk = (email: string, password: string) => {
-
     return (dispatch: Dispatch) => {
         acsessAPI.registrationUser(email, password)
             .then(() => {
                 dispatch(signupAC(email, password));
-                dispatch(setIsFetchingSignupAC(true))
+                dispatch(setIsFetchingSignupAC(true));
+
             })
             .catch(error => {
                 const message = error.response.data.error
@@ -62,3 +59,5 @@ export const registrationThunk = (email: string, password: string) => {
             })
     }
 }
+
+
