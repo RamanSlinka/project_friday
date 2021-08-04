@@ -1,25 +1,22 @@
 import React from 'react'
-import {NavLink, useHistory, useParams} from 'react-router-dom'
-import s from './Header.module.css'
+import { useHistory} from 'react-router-dom'
 import {PATH} from "../Routes";
 import {
     AppBar,
     Button, createStyles,
     IconButton,
     LinearProgress,
-    Link, List,
-    ListItem,
-    ListItemIcon, ListItemText,
     makeStyles,
     Theme,
     Toolbar,
     Typography
 } from "@material-ui/core";
 import {Menu} from "@material-ui/icons";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {AppStoreType} from "../../m2-bll/redux/store";
 import CardsIcon from "../common/icons/CardsIcon";
 import ProfileIcon from "../common/icons/ProfileIcon";
+import {logoutTC} from "../../m2-bll/redux/auth-reducer";
 
 const useStyles = makeStyles<Theme>(theme => createStyles({
     root: {
@@ -41,6 +38,9 @@ const Header: React.FC = () => {
     const {appStatus} = useSelector((state: AppStoreType) => state.app)
     const history = useHistory()
     const classes = useStyles()
+    const dispatch = useDispatch()
+const isLoggedIn = useSelector<AppStoreType, boolean>((state) => state.auth.isLoggedIn)
+
     return (
         <div>
             <AppBar
@@ -59,11 +59,19 @@ const Header: React.FC = () => {
                         It-Incubator
                     </Typography>
                     <div>
-                        <Button
+                        {!isLoggedIn
+                            ? <Button
                             color="inherit"
                             className={classes.menuItem}
                             onClick={() => history.push(PATH.LOGIN)}
                         >Login</Button>
+                            :   <Button
+                            color="inherit"
+                            className={classes.menuItem}
+                            onClick={() =>  dispatch(logoutTC())}
+                        >Log out</Button>}
+
+
                         <Button
                             color="inherit"
                             className={classes.menuItem}
@@ -89,8 +97,9 @@ const Header: React.FC = () => {
                             className={classes.menuItem}
                             onClick={() => history.push(PATH.TEST_PAGE)}
                         >Test Page</Button>
+
                     </div>
-                    <List
+                    {/*<List
                         component="nav"
                         aria-label="main mailbox folders"
                         className={classes.listBlock}
@@ -107,7 +116,7 @@ const Header: React.FC = () => {
                             </ListItemIcon>
                             <ListItemText primary="Drafts" />
                         </ListItem>
-                    </List>
+                    </List>*/}
                 </Toolbar>
                 {appStatus === 'loading' && <LinearProgress color={"secondary"}/>}
             </AppBar>

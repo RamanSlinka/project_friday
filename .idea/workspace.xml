@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da3b917a-27bb-474d-8dce-14c35921255a" name="Changes" comment="add restore password page&#10;refactor code" />
+    <list default="true" id="acef2096-c662-426a-abbe-d7a025f04e57" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n1-main/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/LoginPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/ProfilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/ProfilePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/RestorePassPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/RestorePassPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/signupPage/SignupPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/signupPage/SignupPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/common/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/common/theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/auth-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/profile-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/restore-pass-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/restore-pass-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n1-main/m3-dal/Api.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m3-dal/Api.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1w5lWZJq0pLmIW1VvEzXv0h1EZA" />
+  <component name="ProjectId" id="1wFv8Meku0MuzmWskje1AgxYnrj" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -19,47 +34,42 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CopyTodo" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="ts.external.directory.path" value="H:\ProjectFriday\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="da3b917a-27bb-474d-8dce-14c35921255a" name="Changes" comment="" />
-      <created>1627756363999</created>
+      <changelist id="acef2096-c662-426a-abbe-d7a025f04e57" name="Changes" comment="" />
+      <created>1628066991333</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1627756363999</updated>
-      <workItem from="1627756365615" duration="364000" />
+      <updated>1628066991333</updated>
+      <workItem from="1628066993281" duration="3630000" />
     </task>
-    <task id="LOCAL-00001" summary="add restore password page&#10;refactor code">
-      <created>1627756678299</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1627756678299</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="add restore password page&#10;refactor code" />
-    <option name="LAST_COMMIT_MESSAGE" value="add restore password page&#10;refactor code" />
   </component>
 </project>
