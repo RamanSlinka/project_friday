@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="acef2096-c662-426a-abbe-d7a025f04e57" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="acef2096-c662-426a-abbe-d7a025f04e57" name="Changes" comment="add Logout button in Header page(+api, + thunk)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/LoginPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/NewPassPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/NewPassPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/ProfilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/ProfilePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/RestorePassCheckEmailPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/RestorePassCheckEmailPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/RestorePassPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/RestorePassPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/signupPage/SignupPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/signupPage/SignupPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/common/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/common/theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/signupPage/signupReducer.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/auth-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/profile-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/restore-pass-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/restore-pass-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/restore-pass-reducer.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/n1-main/m3-dal/Api.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m3-dal/Api.tsx" afterDir="false" />
     </list>
@@ -34,7 +32,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CopyTodo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../it-incubator-ignat-project" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
     <property name="ts.external.directory.path" value="H:\ProjectFriday\node_modules\typescript\lib" />
@@ -65,11 +63,34 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1628066991333</updated>
-      <workItem from="1628066993281" duration="3630000" />
+      <workItem from="1628066993281" duration="12143000" />
     </task>
+    <task id="LOCAL-00001" summary="add Logout button in Header page(+api, + thunk)">
+      <created>1628070819145</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1628070819145</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add Logout button in Header page(+api, + thunk)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Logout button in Header page(+api, + thunk)" />
   </component>
 </project>
