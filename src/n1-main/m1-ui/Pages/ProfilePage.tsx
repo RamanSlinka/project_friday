@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react'
-import {Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, TextField, Button, Grid} from '@material-ui/core'
+import React, {useEffect} from 'react'
+import { Grid} from '@material-ui/core'
 import {useDispatch, useSelector} from "react-redux";
 
 import {authMeTC, InitStateType} from "../../m2-bll/redux/auth-reducer"
@@ -21,6 +21,7 @@ export const ProfilePage: React.FC = () => {
             dispatch(authMeTC())
         }
     }, [])
+
 
     if (userProfile._id) {
         return (

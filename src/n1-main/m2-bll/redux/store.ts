@@ -2,17 +2,14 @@ import {combineReducers, createStore, applyMiddleware} from "redux"
 import thunkMiddleware from 'redux-thunk'
 import {authReducer} from "./auth-reducer";
 import {appReducer} from "./app-reducer";
-
-import {profileReducer} from "./profile-reducer";
+import {packReducer} from "./pack-reducer";
 
 
 
 const reducers = combineReducers({
     auth: authReducer,
-    //signup: signupReducer,
     app : appReducer,
-   // passRestore : passRestoreReducer,
-   // profile: profileReducer
+    pack : packReducer,
 });
 
 export const store = createStore(reducers, applyMiddleware(thunkMiddleware));

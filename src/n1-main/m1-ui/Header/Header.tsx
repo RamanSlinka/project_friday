@@ -1,11 +1,15 @@
 import React from 'react'
-import { useHistory} from 'react-router-dom'
+import {NavLink, useHistory, useParams} from 'react-router-dom'
+import s from './Header.module.css'
 import {PATH} from "../Routes";
 import {
     AppBar,
     Button, createStyles,
     IconButton,
     LinearProgress,
+    Link, List,
+    ListItem,
+    ListItemIcon, ListItemText,
     makeStyles,
     Theme,
     Toolbar,
@@ -16,7 +20,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppStoreType} from "../../m2-bll/redux/store";
 import CardsIcon from "../common/icons/CardsIcon";
 import ProfileIcon from "../common/icons/ProfileIcon";
-import {logoutTC} from "../../m2-bll/redux/auth-reducer";
+import { logoutTC } from '../../m2-bll/redux/auth-reducer';
 
 const useStyles = makeStyles<Theme>(theme => createStyles({
     root: {
@@ -39,7 +43,8 @@ const Header: React.FC = () => {
     const history = useHistory()
     const classes = useStyles()
     const dispatch = useDispatch()
-const isLoggedIn = useSelector<AppStoreType, boolean>((state) => state.auth.isLoggedIn)
+    const isLoggedIn = useSelector<AppStoreType, boolean>((state) => state.auth.isLoggedIn)
+
 
     return (
         <div>
@@ -61,16 +66,15 @@ const isLoggedIn = useSelector<AppStoreType, boolean>((state) => state.auth.isLo
                     <div>
                         {!isLoggedIn
                             ? <Button
-                            color="inherit"
-                            className={classes.menuItem}
-                            onClick={() => history.push(PATH.LOGIN)}
-                        >Login</Button>
+                                color="inherit"
+                                className={classes.menuItem}
+                                onClick={() => history.push(PATH.LOGIN)}
+                            >Login</Button>
                             :   <Button
-                            color="inherit"
-                            className={classes.menuItem}
-                            onClick={() =>  dispatch(logoutTC())}
-                        >Log out</Button>}
-
+                                color="inherit"
+                                className={classes.menuItem}
+                                onClick={() =>  dispatch(logoutTC())}
+                            >Log out</Button>}
 
                         <Button
                             color="inherit"
@@ -97,6 +101,20 @@ const isLoggedIn = useSelector<AppStoreType, boolean>((state) => state.auth.isLo
                             className={classes.menuItem}
                             onClick={() => history.push(PATH.TEST_PAGE)}
                         >Test Page</Button>
+
+                        {/*------------------ add PACK and CARDS in to header -------------- */}
+                        <Button
+                            color="inherit"
+                            className={classes.menuItem}
+                            onClick={() => history.push(PATH.PACK)}
+                        >Packs</Button>
+                        <Button
+                            color="inherit"
+                            className={classes.menuItem}
+                            onClick={() => history.push(PATH.CARDS)}
+                        >Cards</Button>
+
+                       {/* -------------------------------------------------------------   */}
 
                     </div>
                     {/*<List

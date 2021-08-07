@@ -5,17 +5,16 @@ import {useFormik} from "formik";
 import * as Yup from 'yup';
 import { Redirect} from "react-router-dom";
 import { useParams } from 'react-router-dom'
-
+/*import {setNewPasswordTC} from "../../m2-bll/redux/restore-pass-reducer";*/
 /*import {setNew}*/
 
 import {
     Button,
-    Card,
-    createStyles,
+    Card, createStyles,
     FormControl,
     FormGroup,
-    Grid, IconButton, Input, InputAdornment, makeStyles,
-     Theme, Typography
+    Grid, IconButton, Input, InputAdornment,  makeStyles,
+    Theme, Typography
 } from "@material-ui/core";
 import {PATH} from "../Routes";
 import {Visibility, VisibilityOff} from '@material-ui/icons';

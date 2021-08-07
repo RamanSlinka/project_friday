@@ -1,6 +1,6 @@
 import {acsessAPI, UserProfileType} from "../../m3-dal/Api";
 import {Dispatch} from 'redux';
-import {setAppStatusAC, setMessageErrorAC} from "./app-reducer";
+import {setAppErrorAC, setAppStatusAC, setMessageErrorAC} from "./app-reducer";
 
 
 export type InitStateType = typeof initState;
@@ -90,11 +90,15 @@ export const loggedInTC = (email: string, password: string, rememberMe: boolean)
             .then((res) => {
                 dispatch(profileAC(res.data))
                 dispatch(loggedInAC(true, ""))
-            }).catch(rej => {
-            // if (rej.response.data){
-            // console.log(rej.response.data.error)
-            dispatch(loggedInAC(false, rej.response.data.error))
-        })
+            })
+                .catch(rej => {
+                //    if has response and has data
+                if (rej.response?.data) {
+                    dispatch(loggedInAC(false, rej.response.data.error))
+                } else {
+                    dispatch(loggedInAC(false, "network error"))
+                }
+            })
     }
 }
 
@@ -118,10 +122,12 @@ export const authMeTC = () => {
                 dispatch(profileAC(res.data))
                 dispatch(loggedInAC(true, ""))
             }).catch(rej => {
-            dispatch(loggedInAC(false, rej.response.data.error))
+            const error = rej.response
+                ? rej.response.data.error
+                : (rej.message + ', more details in the console');
+            console.log(error)
         })
-    }
-}
+    }}
 
 export const registrationThunk = (email: string, password: string) => {
     return (dispatch: Dispatch) => {
@@ -134,6 +140,8 @@ export const registrationThunk = (email: string, password: string) => {
             .catch(error => {
                 const message = error.response.data.error
                 dispatch(signupAC(email, password, message))
+              //  dispatch(setAppErrorAC(error.message))
+             //   dispatch(setAppStatusAC("failed"))
             })
     }
 }

@@ -6,15 +6,12 @@ import * as Yup from 'yup';
 import {NavLink, Redirect} from "react-router-dom";
 import {
     Button,
-    Card,
-    createStyles,
-    FormControl,
+    Card, createStyles, FormControl,
     FormGroup,
     Grid, Link, makeStyles,
     TextField, Theme, Typography
 } from "@material-ui/core";
 import {PATH} from "../Routes";
-
 import Loading from "../common/c7-Progress/Loading";
 import {forgotPassTC} from "../../m2-bll/redux/auth-reducer";
 
