@@ -5,7 +5,7 @@ import {
     PackDataType,
     PackResponseDataType, PackUpdateObjectType
 } from "../../m3-dal/Api";
-import {AppStatusType, setAppStatusAC, setMessageErrorAC} from "./app-reducer";
+import {AppStatusType, setAppErrorAC, setAppStatusAC, setMessageErrorAC} from "./app-reducer";
 import {Dispatch} from "redux";
 
 export enum ACTIONS_TYPE {
@@ -176,9 +176,11 @@ export type SetPackSortType = ReturnType<typeof setPackSortType>
 
 export const getAllPack = (queryPackObject: GetPackQueryParamsType) => {
     return (dispatch: Dispatch) => {
+
         dispatch(setAppStatusAC('loading'))
         acsessAPI.getCardPacks(queryPackObject)
             .then(res => {
+
                 if (res.data && res.data.cardPacks.length > 0) {
                     dispatch(setCardsPackAC(res.data.cardPacks))
                     /*   const cardsPackWithDate = res.data.cardPacks.map((pack: PackResponseDataType) => {
@@ -201,6 +203,7 @@ export const getAllPack = (queryPackObject: GetPackQueryParamsType) => {
                 dispatch(setAppStatusAC('succeeded'))
             })
             .catch(error => {
+                dispatch(setAppErrorAC(error.message))
                 dispatch(setAppStatusAC('failed'))
                 dispatch(setMessageErrorAC('Something went wrong'))
                 /*if (error.response && error.response.status) {
@@ -226,8 +229,8 @@ export const deletePackByIdTC = (id: string) => {
             .then(res => {
                 dispatch(setAppStatusAC('succeeded'))
             })
-            .catch(err => {
-                console.log(err)
+            .catch(error => {
+                dispatch(setAppErrorAC(error.message))
                 dispatch(setAppStatusAC('failed'))
             })
     }
@@ -235,13 +238,14 @@ export const deletePackByIdTC = (id: string) => {
 
 export const addNewPackTC = (packObject: NewPackObjectDataType) => {
     return (dispatch: Dispatch) => {
+        debugger
         dispatch(setAppStatusAC('loading'))
         acsessAPI.postCardPacks(packObject)
             .then(res => {
                 dispatch(setAppStatusAC('succeeded'))
             })
-            .catch(err => {
-                console.log(err)
+            .catch(error => {
+                dispatch(setAppErrorAC(error.message))
                 dispatch(setAppStatusAC('failed'))
             })
     }
@@ -249,13 +253,14 @@ export const addNewPackTC = (packObject: NewPackObjectDataType) => {
 
 export const updateCardPack = (packUpdateObject: PackUpdateObjectType) => {
     return (dispatch: Dispatch) => {
+        debugger
         dispatch(setAppStatusAC('loading'))
         acsessAPI.updateCardPacks(packUpdateObject)
             .then(res => {
                 dispatch(setAppStatusAC('succeeded'))
             })
-            .then(err => {
-                console.log(err)
+            .catch(error => {
+                dispatch(setAppErrorAC(error.message))
                 dispatch(setAppStatusAC('failed'))
             })
     }

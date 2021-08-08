@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="acef2096-c662-426a-abbe-d7a025f04e57" name="Changes" comment="union all reducers in auth-reducer">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="acef2096-c662-426a-abbe-d7a025f04e57" name="Changes" comment="add   search">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/LoginPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/NewPassPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/NewPassPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/ProfilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/ProfilePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/RestorePassCheckEmailPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/RestorePassCheckEmailPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/RestorePassPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/RestorePassPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/TestPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/TestPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Pages/signupPage/SignupPage.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/Routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/Routes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/common/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m1-ui/common/theme.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/app-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/app-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/ErrorSnackbar/error-utils.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/auth-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/m3-dal/Api.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m3-dal/Api.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/pack-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/pack-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +30,7 @@
     <property name="ts.external.directory.path" value="H:\ProjectFriday\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="npm.deploy">
+  <component name="RunManager" selected="npm.start">
     <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -83,7 +68,8 @@
       <updated>1628066991333</updated>
       <workItem from="1628066993281" duration="14218000" />
       <workItem from="1628189664216" duration="834000" />
-      <workItem from="1628362717622" duration="354000" />
+      <workItem from="1628362717622" duration="1248000" />
+      <workItem from="1628413704087" duration="7854000" />
     </task>
     <task id="LOCAL-00001" summary="add Logout button in Header page(+api, + thunk)">
       <created>1628070819145</created>
@@ -99,7 +85,49 @@
       <option name="project" value="LOCAL" />
       <updated>1628080604367</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="refactor code from MERGE all branch">
+      <created>1628363405869</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1628363405869</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add DeskTable component">
+      <created>1628363499298</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1628363499298</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add DeskTable and Table components">
+      <created>1628363545806</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1628363545806</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add Packs and RangeShow components">
+      <created>1628363631732</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1628363631732</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add Error  component and Pagination">
+      <created>1628363729703</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1628363729703</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add   search">
+      <created>1628363831099</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1628363831099</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +148,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add Logout button in Header page(+api, + thunk)" />
     <MESSAGE value="union all reducers in auth-reducer" />
-    <option name="LAST_COMMIT_MESSAGE" value="union all reducers in auth-reducer" />
+    <MESSAGE value="refactor code from MERGE all branch" />
+    <MESSAGE value="add DeskTable component" />
+    <MESSAGE value="add DeskTable and Table components" />
+    <MESSAGE value="add Packs and RangeShow components" />
+    <MESSAGE value="add Error  component and Pagination" />
+    <MESSAGE value="add   search" />
+    <option name="LAST_COMMIT_MESSAGE" value="add   search" />
   </component>
 </project>
