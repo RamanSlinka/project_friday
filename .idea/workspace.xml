@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="acef2096-c662-426a-abbe-d7a025f04e57" name="Changes" comment="add   search">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/m1-ui/ErrorSnackbar/error-utils.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/auth-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/pack-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/n1-main/m2-bll/redux/pack-reducer.ts" afterDir="false" />
-    </list>
+    <list default="true" id="acef2096-c662-426a-abbe-d7a025f04e57" name="Changes" comment="connection errors handling" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +19,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../it-incubator-ignat-project" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
     <property name="ts.external.directory.path" value="H:\ProjectFriday\node_modules\typescript\lib" />
@@ -69,7 +64,7 @@
       <workItem from="1628066993281" duration="14218000" />
       <workItem from="1628189664216" duration="834000" />
       <workItem from="1628362717622" duration="1248000" />
-      <workItem from="1628413704087" duration="7854000" />
+      <workItem from="1628413704087" duration="7998000" />
     </task>
     <task id="LOCAL-00001" summary="add Logout button in Header page(+api, + thunk)">
       <created>1628070819145</created>
@@ -127,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628363831099</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="connection errors handling">
+      <created>1628432766033</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1628432766033</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +156,7 @@
     <MESSAGE value="add Packs and RangeShow components" />
     <MESSAGE value="add Error  component and Pagination" />
     <MESSAGE value="add   search" />
-    <option name="LAST_COMMIT_MESSAGE" value="add   search" />
+    <MESSAGE value="connection errors handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="connection errors handling" />
   </component>
 </project>

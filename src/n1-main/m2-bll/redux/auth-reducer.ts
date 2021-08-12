@@ -91,16 +91,13 @@ export const loggedInTC = (email: string, password: string, rememberMe: boolean)
                 dispatch(profileAC(res.data))
                 dispatch(loggedInAC(true, ""))
             })
-                .catch(error => {
+            .catch(rej => {
                 //    if has response and has data
-                // if (rej.response?.data) {
-                //     dispatch(loggedInAC(false, rej.response.data.error))
-                // } else {
-                //     dispatch(loggedInAC(false, "network error"))
-                // }
-                    dispatch(setAppErrorAC(error.message))
-                    dispatch(setAppStatusAC('failed'))
-
+                if (rej.response?.data) {
+                    dispatch(loggedInAC(false, rej.response.data.error))
+                } else {
+                    dispatch(loggedInAC(false, "network error"))
+                }
             })
     }
 }
@@ -130,7 +127,8 @@ export const authMeTC = () => {
                 : (rej.message + ', more details in the console');
             console.log(error)
         })
-    }}
+    }
+}
 
 export const registrationThunk = (email: string, password: string) => {
     return (dispatch: Dispatch) => {
@@ -138,13 +136,14 @@ export const registrationThunk = (email: string, password: string) => {
             .then(() => {
                 dispatch(signupAC(email, password));
                 dispatch(setIsFetchingSignupAC(true));
-
             })
             .catch(error => {
                 dispatch(setAppErrorAC(error.message))
-               dispatch(setAppStatusAC("failed"))
+                dispatch(setAppStatusAC('failed'))
                 const message = error.response.data.error
                 dispatch(signupAC(email, password, message))
+                //  dispatch(setAppErrorAC(error.message))
+                //   dispatch(setAppStatusAC("failed"))
             })
     }
 }
@@ -160,6 +159,7 @@ export const setNewPasswordTC = (password: string, resetPasswordToken: string) =
                 }
             })
             .catch(error => {
+                dispatch(setAppErrorAC(error.message))
                 dispatch(setAppStatusAC('failed'))
                 if (error.response && error.response.status) {
                     if (error.response?.data?.error) {
@@ -170,8 +170,6 @@ export const setNewPasswordTC = (password: string, resetPasswordToken: string) =
                 } else {
                     dispatch(setMessageErrorAC('Something went wrong'))
                 }
-                dispatch(setAppErrorAC(error.message))
-                dispatch(setAppStatusAC('failed'))
             })
     }
 }
@@ -192,12 +190,26 @@ export const forgotPassTC = (email: string) => {
                 }
             })
             .catch(error => {
-                console.log('Thunk error', error)
+                dispatch(setAppErrorAC(error.message))
                 dispatch(setAppStatusAC('failed'))
                 if (error.response && error.response.status) {
                     dispatch(setMessageErrorAC(error.response.data.error))
                     dispatch(setPassRequestAC(false))
+                    /*if (error.response.status === 404) {
+                        // Request made and server responded
+                        /!*console.log(error.response.data);
+                        console.log(error.response.status);
+                        console.log(error.response.headers);*!/
+                        dispatch(setMessageErrorAC(error.response.data.error))
+                        dispatch(setPassRestoredAC(false))
 
+                    } else if (error.response.status === 400) {
+                        dispatch(setMessageErrorAC(error.response.data.error))
+                        dispatch(setPassRestoredAC(false))
+                    } else if (error.response.status === 500) {
+                        dispatch(setMessageErrorAC(error.response.data.error))
+                        dispatch(setPassRestoredAC(false))
+                    }*/
                 } else {
                     dispatch(setMessageErrorAC("Something went wrong"))
                     dispatch(setPassRequestAC(false))
@@ -205,8 +217,8 @@ export const forgotPassTC = (email: string) => {
                         // The request was made but no response was received
                         console.log(error.request);
                     } else {
-                        dispatch(setAppErrorAC(error.message))
-                        dispatch(setAppStatusAC('failed'))
+                        // Something happened in setting up the request that triggered an Error
+                        console.log('Error', error.message);
                     }
                 }
             })

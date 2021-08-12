@@ -2,15 +2,10 @@ import React, {useEffect} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import RangeShowCard from './RangeShowCard';
-import PackList from './PacksList'
 import {useDispatch, useSelector} from "react-redux";
 import {AppStoreType} from "../../../m2-bll/redux/store";
-
-import {Redirect} from "react-router-dom";
-import {PATH} from "../../Routes";
 import {getAllPack} from "../../../m2-bll/redux/pack-reducer";
-import {GetPackQueryParamsType, UserProfileType} from "../../../m3-dal/Api";
-import {Card, Paper} from "@material-ui/core";
+import {Paper} from "@material-ui/core";
 import DeckTable from "../../common/c8-Table/DeckTable";
 import Search from './Search';
 import Typography from "@material-ui/core/Typography";
@@ -36,13 +31,13 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 3,
         margin: "30px",
         maxWidth: "950px",
-        boxSizing : "border-box",
+        boxSizing: "border-box",
     },
     mainSearchBlock: {
         /*flexGrow: 1,*/
         marginBottom: "20px",
     },
-    mainSearchHeader : {
+    mainSearchHeader: {
         marginBottom: "20px",
     },
     mainTableBlock: {
@@ -58,23 +53,7 @@ export default function Pack() {
     const dispatch = useDispatch();
 
     const getAllPacks = () => {
-        let sortPacks
-        if (pack.sortField) {
-            sortPacks = +pack.isSortTypeAscending + pack.sortField;
-        }
-
-        const paramsObject: GetPackQueryParamsType = {
-            params: {
-                ...(pack.packName && {packName: pack.packName}),
-                ...(pack.min && {min: pack.min}),
-                ...(pack.max && {max: pack.max}),
-                ...(pack.page && {page: pack.page}),
-                ...(pack.pageCount && {pageCount: pack.pageCount}),
-                ...(pack.user_id && {user_id: pack.user_id}),
-                ...(sortPacks && {sortPacks: sortPacks}),
-            }
-        }
-        dispatch(getAllPack(paramsObject))
+        dispatch(getAllPack())
     };
 
     useEffect(() => {
@@ -91,6 +70,7 @@ export default function Pack() {
 
     return (
         <div className={classes.root}>
+
             <Paper
                 elevation={4}
                 className={classes.paper}
