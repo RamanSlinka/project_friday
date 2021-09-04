@@ -1,26 +1,18 @@
 import React, {useEffect} from 'react'
-import { Grid} from '@material-ui/core'
-import {useDispatch, useSelector} from "react-redux";
-
-import {authMeTC, InitStateType} from "../../m2-bll/redux/auth-reducer"
+import {Grid} from '@material-ui/core'
+import { useSelector} from 'react-redux';
+import FilesOperations from './FilesOperations';
 import {AppStoreType} from "../../m2-bll/redux/store";
 import {Redirect} from "react-router-dom";
 import {PATH} from "../Routes";
-import {UserProfileType} from "../../m3-dal/Api";
+import {UserProfileType} from '../../m3-dal/Api';
+
 
 
 export const ProfilePage: React.FC = () => {
 
-    const dispatch = useDispatch()
-    const isLoggedIn = useSelector<AppStoreType, InitStateType>(state => state.auth)
+
     const userProfile = useSelector<AppStoreType, UserProfileType>(state => state.auth)
-
-
-    useEffect(() => {
-        if (!userProfile._id) {
-            dispatch(authMeTC())
-        }
-    }, [])
 
 
     if (userProfile._id) {
@@ -34,11 +26,8 @@ export const ProfilePage: React.FC = () => {
                     <h3>Avatar <img src={userProfile.avatar} style={{width: 100}}/></h3>
                     <h3>PublicCardPacksCount= {userProfile.publicCardPacksCount}</h3>
                     <h3>created {userProfile.created}</h3>
-                    <h3>update= {userProfile.update}</h3>
-                    <h3>isAdmin= {userProfile.isAdmin}</h3>
-                    <h3>verified= {userProfile.verified}</h3>
-                    <h3>rememberMe= {userProfile.rememberMe}</h3>
                 </Grid>
+                <FilesOperations/>
             </Grid>
         )
     } else {

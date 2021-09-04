@@ -10,6 +10,8 @@ import {
 } from "@material-ui/core";
 import {loggedInTC} from "../../m2-bll/redux/auth-reducer";
 import {PATH} from "../Routes";
+import {useHistory} from "react-router-dom";
+
 
 
 const useStyles = makeStyles<Theme>(theme => createStyles({
@@ -55,7 +57,9 @@ const LoginPage: React.FC = () => {
     const formik = useFormik({
         initialValues: {
             email: '',
+            // nya-admin@nya.nya
             password: '',
+            // 1qazxcvBG
             remember: false
         },
         validationSchema: restoreSchema,
@@ -65,6 +69,7 @@ const LoginPage: React.FC = () => {
         },
     })
 
+    /*const history = useHistory();*/
 
     if (isLoggedIn) {
         return <Redirect to={'/'}/>

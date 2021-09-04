@@ -7,9 +7,6 @@ import {
     Button, createStyles,
     IconButton,
     LinearProgress,
-    Link, List,
-    ListItem,
-    ListItemIcon, ListItemText,
     makeStyles,
     Theme,
     Toolbar,
@@ -18,8 +15,7 @@ import {
 import {Menu} from "@material-ui/icons";
 import {useDispatch, useSelector} from "react-redux";
 import {AppStoreType} from "../../m2-bll/redux/store";
-import CardsIcon from "../common/icons/CardsIcon";
-import ProfileIcon from "../common/icons/ProfileIcon";
+
 import { logoutTC } from '../../m2-bll/redux/auth-reducer';
 
 const useStyles = makeStyles<Theme>(theme => createStyles({
@@ -64,45 +60,23 @@ const Header: React.FC = () => {
                         It-Incubator
                     </Typography>
                     <div>
-                        {!isLoggedIn
-                            ? <Button
-                                color="inherit"
-                                className={classes.menuItem}
-                                onClick={() => history.push(PATH.LOGIN)}
-                            >Login</Button>
-                            :   <Button
+                            <Button
                                 color="inherit"
                                 className={classes.menuItem}
                                 onClick={() =>  dispatch(logoutTC())}
-                            >Log out</Button>}
-
-                        <Button
-                            color="inherit"
-                            className={classes.menuItem}
-                            onClick={() => history.push(PATH.SIGNUP)}
-                        >Sign up</Button>
+                            >Log out</Button>
                         <Button
                             color="inherit"
                             className={classes.menuItem}
                             onClick={() => history.push(PATH.PROFILE)}
                         >Profile</Button>
-                        <Button
-                            color="inherit"
-                            className={classes.menuItem}
-                            onClick={() => history.push(PATH.RESTORE_PASS)}
-                        >Restore Pass</Button>
-                        <Button
-                            color="inherit"
-                            className={classes.menuItem}
-                            onClick={() => history.push(PATH.NEW_PASS)}
-                        >New Pass</Button>
+
                         <Button
                             color="inherit"
                             className={classes.menuItem}
                             onClick={() => history.push(PATH.TEST_PAGE)}
                         >Test Page</Button>
 
-                        {/*------------------ add PACK and CARDS in to header -------------- */}
                         <Button
                             color="inherit"
                             className={classes.menuItem}
@@ -113,8 +87,17 @@ const Header: React.FC = () => {
                             className={classes.menuItem}
                             onClick={() => history.push(PATH.CARDS)}
                         >Cards</Button>
+                        <Button
+                            color="inherit"
+                            className={classes.menuItem}
+                            onClick={() => history.push(PATH.VIDEO)}
+                        >Video</Button>
+                        <Button
+                            color="inherit"
+                            className={classes.menuItem}
+                            onClick={() => history.push(PATH.FILES)}
+                        >Files</Button>
 
-                       {/* -------------------------------------------------------------   */}
 
                     </div>
                     {/*<List
