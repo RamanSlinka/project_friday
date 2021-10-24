@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/project_friday/static/css/main.91b23723.chunk.css",
-    "main.js": "/project_friday/static/js/main.b22d4e6e.chunk.js",
-    "main.js.map": "/project_friday/static/js/main.b22d4e6e.chunk.js.map",
-    "runtime-main.js": "/project_friday/static/js/runtime-main.206474fc.js",
-    "runtime-main.js.map": "/project_friday/static/js/runtime-main.206474fc.js.map",
-    "static/js/2.3b72fdc7.chunk.js": "/project_friday/static/js/2.3b72fdc7.chunk.js",
-    "static/js/2.3b72fdc7.chunk.js.map": "/project_friday/static/js/2.3b72fdc7.chunk.js.map",
-    "static/js/3.b8fa2b04.chunk.js": "/project_friday/static/js/3.b8fa2b04.chunk.js",
-    "static/js/3.b8fa2b04.chunk.js.map": "/project_friday/static/js/3.b8fa2b04.chunk.js.map",
+    "main.css": "/project_friday/static/css/main.531a32df.chunk.css",
+    "main.js": "/project_friday/static/js/main.c0db13a8.chunk.js",
+    "main.js.map": "/project_friday/static/js/main.c0db13a8.chunk.js.map",
+    "runtime-main.js": "/project_friday/static/js/runtime-main.27f106d8.js",
+    "runtime-main.js.map": "/project_friday/static/js/runtime-main.27f106d8.js.map",
+    "static/js/2.d7b312ad.chunk.js": "/project_friday/static/js/2.d7b312ad.chunk.js",
+    "static/js/2.d7b312ad.chunk.js.map": "/project_friday/static/js/2.d7b312ad.chunk.js.map",
+    "static/js/3.a1e15a25.chunk.js": "/project_friday/static/js/3.a1e15a25.chunk.js",
+    "static/js/3.a1e15a25.chunk.js.map": "/project_friday/static/js/3.a1e15a25.chunk.js.map",
     "index.html": "/project_friday/index.html",
-    "static/css/main.91b23723.chunk.css.map": "/project_friday/static/css/main.91b23723.chunk.css.map",
-    "static/js/2.3b72fdc7.chunk.js.LICENSE.txt": "/project_friday/static/js/2.3b72fdc7.chunk.js.LICENSE.txt"
+    "static/css/main.531a32df.chunk.css.map": "/project_friday/static/css/main.531a32df.chunk.css.map",
+    "static/js/2.d7b312ad.chunk.js.LICENSE.txt": "/project_friday/static/js/2.d7b312ad.chunk.js.LICENSE.txt",
+    "static/media/Preloader.2187296e.gif": "/project_friday/static/media/Preloader.2187296e.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.206474fc.js",
-    "static/js/2.3b72fdc7.chunk.js",
-    "static/css/main.91b23723.chunk.css",
-    "static/js/main.b22d4e6e.chunk.js"
+    "static/js/runtime-main.27f106d8.js",
+    "static/js/2.d7b312ad.chunk.js",
+    "static/css/main.531a32df.chunk.css",
+    "static/js/main.c0db13a8.chunk.js"
   ]
 }
